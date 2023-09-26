@@ -4,7 +4,7 @@ import ReactDOM  from 'react-dom'
 
 const BackDrop = props =>{
     return (
-        <div className='backdrop'></div>
+        <div className='backdrop' onClick={props.onClose}></div>
     )
 }
 const ModelOverlay = props =>{
@@ -22,7 +22,7 @@ const PortalElement = document.getElementById("overlay")
 const Model = (props) => {
   return (
     <>
-    {ReactDOM.createPortal(<BackDrop/> , PortalElement)}
+    {ReactDOM.createPortal(<BackDrop onClose = {props.onClose}/> , PortalElement)}
     {ReactDOM.createPortal(    
     <ModelOverlay>
         {props.children}

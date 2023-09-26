@@ -3,12 +3,12 @@ import "./Header.css";
 import image from "../../assets/header-image.jpg"
 import HeaderCartButton from "./HeaderCartButton";
 
-const Header = () => {
+const Header = (props) => {
   return (
     <>
     <header className="header">
       <h1>My Food App</h1>
-      <HeaderCartButton/>
+      <HeaderCartButton onShowModel={props.onShow}/>
     </header>
     <div className="image">
     <img
